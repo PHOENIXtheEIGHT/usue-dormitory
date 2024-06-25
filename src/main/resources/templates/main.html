@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{../css/style.css}" />
+    <link rel="stylesheet" th:href="@{../css/main.css}" />
+    <title>Главная страница</title>
+  </head>
+  <body>
+  <header class="header">
+    <a href="http://localhost:8080/dormitory/main" class="header-link header-link__active">Главная</a>
+    <a href="http://localhost:8080/dormitory/laundry" class="header-link">Прачечная</a>
+    <a href="http://localhost:8080/dormitory/applications" class="header-link">Заявки</a>
+    <a href="http://localhost:8080/dormitory/calculator" class="header-link">Калькулятор</a>
+    <div class="header_profile">
+      <h4 class="header-link" th:text="${user}">Маслов Г.О.</h4>
+      <a href="http://localhost:8080/auth/logout">
+        <img th:src="@{../icons/Exit Profile.svg}" />
+      </a>
+    </div>
+  </header>
+    <main>
+      <div class="main-overlay"></div>
+
+      <div class="main-popup popup" id="popup">
+        <div class="main-popup-form">
+          <button type="button" class="main-popup-form_closed" onclick="closePopup()"></button>
+          <input type="text" placeholder="Тема объявления" class="main-popup-form_title" id="title-announcement"/>
+          <textarea placeholder="Текст объявления" class="main-popup-form_text" id="content-announcement"></textarea>
+          <button type="submit" class="main-popup-form_button" onclick="saveAnnouncement()">Опубликовать</button>
+        </div>
+      </div>
+      <div class="main-info">
+        <div class="main-info-content">
+          <div class="main-info-content__header">
+            <h2>Основная информация</h2>
+          </div>
+          <p class="main-info-content__welcome">
+            Добро пожаловать в общежитие Умельцев 13А. Мы предоставляем
+            студентам все необходимые условия для комфортного проживания,
+            личного и физического развития. А взамен, мы просим вас соблюдать
+            некоторые правила:
+          </p>
+          <ol>
+            <li class="main-info-content__list">
+              Соблюдать пропускной режим, постоянно иметь при себе пропуск на
+              право прохода в общежитие и предъявлять его по первому требованию
+              администрации и службы охраны.
+            </li>
+            <li class="main-info-content__list">
+              Соблюдать правила внутреннего распорядка в общежитии и режима работы
+              общежития, технику безопасности, пожарную безопасность,
+              санитарно-гигиенический режим
+            </li>
+            <li class="main-info-content__list">
+              Бережно относиться к помещениям, оборудованию и инвентарю общежития,
+              экономно расходовать электроэнергию и воду, соблюдать чистоту в
+              жилых помещениях и местах общего пользования.
+            </li>
+            <li class="main-info-content__list">
+              Своевременно вносить плату за проживание в установленных размерах.
+            </li>
+          </ol>
+          <p class="main-info-content__about">Подробнее ознакомиться об особенностях проживания в общежитии вы можете в <a href="#" class="main-info-content__link">«Положении о студенческом общежитии».</a></p>
+          <div class="main-info-content__separator"></div>
+          <h3 class="main-info-content__table__title">Графики работы:</h3>
+          <div class="main-info-content-table">
+            <div class="main-info-content-table__row">
+              <div class="main-info-content-table__cell">
+                Общежитие 
+              </div>
+              <div class="main-info-content-table__cell">
+                Каждый день с 6:00 до 00:00
+              </div>
+            </div>
+            <div class="main-info-content-table__row">
+              <div class="main-info-content-table__cell">
+                Комендант 
+              </div>
+              <div class="main-info-content-table__cell">
+                Пн - Пт с 8:00 до 17:00
+              </div>
+            </div>
+            <div class="main-info-content-table__row">
+              <div class="main-info-content-table__cell">
+                Кастелянша
+              </div>
+              <div class="main-info-content-table__cell">
+                Ср с 8:00 до 17:00
+              </div>
+            </div>
+            <div class="main-info-content-table__row">
+              <div class="main-info-content-table__cell">
+                Столовая
+              </div>
+              <div class="main-info-content-table__cell">
+                Каждый день с 8:00 до 17:00
+              </div>
+            </div>
+            <div class="main-info-content-table__row">
+              <div class="main-info-content-table__cell">
+                Душ
+              </div>
+              <div class="main-info-content-table__cell">
+                Пн - Ср Пт - Вс с 6:00 до 23:00
+              </div>
+            </div>
+            <div class="main-info-content-table__row">
+              <div class="main-info-content-table__cell">
+                Прачечная
+              </div>
+              <div class="main-info-content-table__cell">
+                Каждый день с 6:00 до 22:00
+              </div>
+            </div>
+            <div class="main-info-content-table__row">
+              <div class="main-info-content-table__cell">
+                Спортивный зал
+              </div>
+              <div class="main-info-content-table__cell">
+                Пн - Пт с 14:00 до 20:00
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="main-additional__info">
+            <button class="main-additional_info__openPopup" onclick="openPopup()"></button>
+            <h2 class="main-additional__info__title">Доска объявлений</h2>
+            <div class="main-additional-info-content">
+              <h3 class="main-additional_info__noMessages" th:if="${#lists.isEmpty(announcements)}">
+                На данный момент объявления отсутствуют
+              </h3>
+              <div class="main-additional-info-content_message" th:each="announcement : ${announcements}">
+                <div class="main-additional-info-content_title">
+                  <h5 th:text="${announcement.title}"></h5>
+                  <button class="main-additional-info-content__delete" th:data="${announcement.id}" onclick="deleteAnnouncement(this)"></button>
+                </div>
+                <p th:text="${announcement.content}"></p>
+                <p class="main-additional-info-content__date" th:text="${announcement.formattedDate}">14.06.24 12:45</p>
+                <div class="main-info-content__separator"></div>
+              </div>
+            </div>
+          </div>
+          </div>
+      </div>
+    </main>
+  </body>
+  <script th:src="@{../js/request.js}"></script>
+</html>

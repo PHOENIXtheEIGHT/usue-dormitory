@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{../css/style.css}" />
+    <link rel="stylesheet" th:href="@{../css/applications.css}" />
+    <title>Личный кабинет</title>
+  </head>
+  <header class="header">
+    <a href="http://localhost:8080/dormitory/main" class="header-link">Главная</a>
+    <a href="http://localhost:8080/dormitory/laundry" class="header-link">Прачечная</a>
+    <a href="http://localhost:8080/dormitory/applications" class="header-link header-link__active">Заявки</a>
+    <a href="http://localhost:8080/dormitory/calculator" class="header-link">Калькулятор</a>
+    <div class="header_profile">
+      <h4 class="header-link" th:text="${user}">Маслов Г.О.</h4>
+      <a href="http://localhost:8080/auth/logout">
+        <img th:src="@{../icons/Exit Profile.svg}" />
+      </a>
+    </div>
+  </header>
+  <body>
+    <main>
+      <div class="main-content">
+        <div class="main-content-info">
+          <div class="handyman-selection main-content-info__handyman-selection">
+            <div
+              onclick="SelectHandyman(this)"
+              class="handyman-selection__flitter">
+              <div class="handyman-selection__handyman-icon">
+                <img th:src="@{../icons/FlitterIcon.svg}" draggable="false" />
+              </div>
+              <h2 class="handyman-selection__handyman-name">Слесарь</h2>
+            </div>
+            <div
+              onclick="SelectHandyman(this)"
+              class="handyman-selection__electrician">
+              <div class="handyman-selection__handyman-icon">
+                <img th:src="@{../icons/ElectricianIcon.svg}" draggable="false" />
+              </div>
+              <h2 class="handyman-selection__handyman-name">Электрик</h2>
+            </div>
+            <div
+              onclick="SelectHandyman(this)"
+              class="handyman-selection__plumber">
+              <div class="handyman-selection__handyman-icon">
+                <img th:src="@{../icons/PlumberIcon.svg}" draggable="false" />
+              </div>
+              <h2 class="handyman-selection__handyman-name">Сантехник</h2>
+            </div>
+          </div>
+          <div
+            class="problem-description main-content-info__problem-description">
+            <div class="problem-description__header">
+              <h5 class="problem-description__header-text">
+                Описание проблемы
+              </h5>
+            </div>
+            <textarea name="" class="problem-description__textarea"></textarea>
+            <div class="problem-description__specify-date">
+              <div class="problem-description__specified-date">
+                <p class="problem-description__specified-date-text">
+                  Удобная дата
+                </p>
+                <input type="date" class="problem-description__date-input" />
+              </div>
+              <div class="problem-description__specified-time">
+                <p class="problem-description__specified-time-text">
+                  Удобное время с
+                </p>
+                <input
+                  type="time"
+                  class="problem-description__time-from-input" />
+                <p class="problem-description__specified-time-text">до</p>
+                <input type="time" class="problem-description__time-to-input" />
+              </div>
+            </div>
+          </div>
+          <button class="main-content-info__submit-button" onclick="sendApplication()">Отправить</button>
+        </div>
+        <div class="main-content__separator"></div>
+        <div class="main-additional-info-content__requests">
+          <h2>Список заявок</h2>
+          <div class="main-additional-info-content__request__closed" th:each="app : ${appList}">
+            <div class="main-additional-info-content__request__title">
+              <h5 th:text="${app.name}">Сантехник</h5>
+              <button class="dropDownButton open dropDownButton__closed">
+                <img th:src="@{../icons/Expand button.svg}" />
+              </button>
+            </div>
+            <div class="main-additional-info-content__request__open" style="display: none">
+              <p class="main-additional-info-content__request__text" th:text="${app.content}">
+                Нужно прочистить раковину
+              </p>
+              <h4 class="main-additional-info-content__date" th:text="'Заявка от ' + ${app.date}">
+                Заявка от 13 июня
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script th:src="@{../js/toggleElement.js}"></script>
+  </body>
+</html>

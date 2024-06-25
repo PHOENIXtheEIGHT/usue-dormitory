@@ -1,0 +1,134 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content {
+  display: flex;
+  margin-top: 60px;
+  width: 1200px;
+  height: 600px;
+  background-color: #fff;
+  box-shadow: 0px 5px 10px rgba(153, 153, 153, 0.25);
+  border-radius: 45px;
+}
+
+.main-content-info {
+  width: 650px;
+  height: 100px;
+  margin-top: 25px;
+  margin-left: 50px;
+}
+
+.test {
+  display: flex;
+  align-items: center;
+}
+
+.main-content-info__sign_out {
+  display: flex;
+}
+
+.main-content-info-sign_out_link {
+  text-decoration: none;
+  color: #FF0700;
+  cursor: default;
+}
+
+.main-content-info__sign_out_text {
+  cursor: pointer;
+  height: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  margin-left: 10px;
+}
+
+.main-content-info-personal {
+  display: flex;
+  margin-left: 17.5px;
+  margin-top: 15px;
+}
+
+.main-content-info-personal-column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  row-gap: 10px;
+}
+
+.main-content-info-personal-row {
+  color: #444444;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.main-content-info-personal-row b {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+.main-content__separator {
+  border: 1px solid #80C2FF;
+  height: 550px;
+  margin: 25px 50px;
+}
+
+.main-content-payments {
+  width: 350px;
+  height: 295px;
+  margin-top: 25px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #444444;
+}
+
+.main-content-payments-operation {
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  background-color: #E6F2FF;
+  width: 350px;
+  margin-top: 15px;
+}
+
+.main-content-payments-operation-amount {
+  display: flex;
+  margin: 10px;
+  margin-bottom: 0px;
+  column-gap: 10px;
+}
+
+.main-content-payments-operation-amount>p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.main-content-payments-operation-amount>p:first-of-type {
+  font-size: 16px;
+}
+
+.main-content-payments-operation_separator {
+  border: 1px solid #80C2FF;
+  width: 330px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.main-content-payments-operation-date__range {
+  display: flex;
+  margin: 10px;
+  margin-top: 0px;
+  justify-content: flex-end;
+  column-gap: 10px;
+}
+
+.main-content-payments-operation-date__range p {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+}

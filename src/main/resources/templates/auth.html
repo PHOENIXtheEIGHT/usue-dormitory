@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{../css/style.css}" />
+    <link rel="stylesheet" th:href="@{../css/auth.css}" />
+    <script th:src="@{../js/auth.js}"></script>
+    <title>Авторизация</title>
+  </head>
+  <body>
+    <div class="bg-gradient">
+      <div class="main-auth">
+        <p class="main-auth__title">Авторизация</p>
+        <div class="main-auth-form">
+          <label for="username-input">Логин:</label>
+          <input type="text" id="username-input" class="main-auth-form__login" />
+          <label for="password-input">Пароль:</label>
+          <input type="password" id="password-input" class="main-auth-form__password"/>
+          <button class="main-auth-form__submit" onclick="signIn()">Войти</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

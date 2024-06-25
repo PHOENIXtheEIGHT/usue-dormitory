@@ -1,0 +1,183 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content {
+  display: flex;
+  margin-top: 60px;
+  width: 1200px;
+  height: 600px;
+  background-color: #fff;
+  box-shadow: 0px 5px 10px rgba(153, 153, 153, 0.25);
+  border-radius: 45px;
+}
+
+.main-content-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  row-gap: 25px;
+
+  width: 650px;
+  height: 550px;
+  margin-top: 25px;
+  margin-left: 50px;
+
+  color: #444444;
+  font-family: "Montserrat", sans-serif;
+  line-height: 30px;
+  letter-spacing: 0.1em;
+}
+
+.main-content-info_date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.main-content-info_date__select {
+  border: 0 solid;
+  border-bottom: 1px solid #80c2ff;
+
+  text-align: center;
+
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  color: #444444;
+}
+
+input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.main-content-info_date p {
+  font-size: 18px;
+}
+
+.main-content-info_price {
+  display: flex;
+  justify-content: center;
+  column-gap: 15px;
+  font-size: 18px;
+}
+
+.main-content-info_price p {
+  font-size: 18px;
+}
+
+.main-content-info_price__number {
+  color: #0086ff;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.main-content-info_calculate {
+  width: 450px;
+  height: 40px;
+  padding: 10px 0;
+  border-radius: 15px;
+  border: 1px solid #0086ff;
+  cursor: pointer;
+
+  background-color: #e6f2ff;
+  color: #0086ff;
+  line-height: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  transition: 0.1s ease-in-out;
+}
+
+.main-content-info_calculate:hover {
+  background-color: rgba(230, 242, 255, 0.4);
+}
+
+.main-content-info_pay {
+  width: 450px;
+  height: 40px;
+  padding: 10px 0;
+  border-radius: 15px;
+  border: 0 solid;
+  cursor: pointer;
+
+  background-color: #0086ff;
+  color: #fff;
+  line-height: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  transition: 0.1s ease-in-out;
+}
+
+.main-content-info_pay:hover {
+  background-color: #0264b9;
+}
+
+.main-content__separator {
+  border: 1px solid #80c2ff;
+  height: 550px;
+  margin: 25px 50px;
+}
+
+.main-content-payments {
+  width: 350px;
+  height: 295px;
+  margin-top: 25px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #444444;
+}
+
+.main-content-payments-operation {
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  background-color: #e6f2ff;
+  width: 350px;
+  margin-top: 15px;
+}
+
+.main-content-payments-operation-amount {
+  display: flex;
+  margin: 10px;
+  margin-bottom: 0px;
+  column-gap: 10px;
+}
+
+.main-content-payments-operation-amount > p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.main-content-payments-operation-amount > p:first-of-type {
+  font-size: 16px;
+}
+
+.main-content-payments-operation_separator {
+  border: 1px solid #80c2ff;
+  width: 330px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.main-content-payments-operation-date__range {
+  display: flex;
+  margin: 10px;
+  margin-top: 0px;
+  justify-content: flex-end;
+  column-gap: 10px;
+}
+
+.main-content-payments-operation-date__range p {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+}

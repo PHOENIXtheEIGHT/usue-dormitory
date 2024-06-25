@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{../css/style.css}" />
+    <link rel="stylesheet" th:href="@{../css/calculator.css}" />
+    <title>Личный кабинет</title>
+  </head>
+  <header class="header">
+    <a href="http://localhost:8080/dormitory/main" class="header-link">Главная</a>
+    <a href="http://localhost:8080/dormitory/laundry" class="header-link">Прачечная</a>
+    <a href="http://localhost:8080/dormitory/applications" class="header-link">Заявки</a>
+    <a href="http://localhost:8080/dormitory/calculator" class="header-link header-link__active">Калькулятор</a>
+    <div class="header_profile">
+      <h4 class="header-link" th:text="${user}">Маслов Г.О.</h4>
+      <a href="http://localhost:8080/auth/logout">
+        <img th:src="@{../icons/Exit Profile.svg}" />
+      </a>
+    </div>
+  </header>
+  <body>
+    <main>
+      <div class="main-content">
+        <div class="main-content-info">
+          <div class="main-content-info_date">
+            <p>Оплатить с</p>
+            <input type="date" class="main-content-info_date__select" />
+            <p>по</p>
+            <input type="date" class="main-content-info_date__select" />
+          </div>
+          <div class="main-content-info_price">
+            <p>Оплата составит</p>
+            <p class="main-content-info_price__number"> ... ₽</p>
+          </div>
+          <button class="main-content-info_calculate">Рассчитать</button>
+          <button class="main-content-info_pay" onclick="pay()">Оплатить</button>
+        </div>
+        <div class="main-content__separator"></div>
+        <div class="main-content-payments">
+          <h2>Ваши платежи</h2>
+          <div class="main-content-payments-operation" th:each="pay : ${pays}">
+            <div class="main-content-payments-operation-amount">
+              <p>Оплата</p>
+              <p th:text="${pay.priceNumber} + '₽'">8250 ₽</p>
+            </div>
+            <div class="main-content-payments-operation_separator"></div>
+            <div class="main-content-payments-operation-date__range">
+              <p th:text="'С ' + ${pay.startDate}">С 01.09.2023</p>
+              <p th:text="'По ' + ${pay.endDate}">По 28.02.2024</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script th:src="@{../js/calculator.js}"></script>
+</html>

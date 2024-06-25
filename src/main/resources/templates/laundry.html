@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{../css/style.css}" />
+    <link rel="stylesheet" th:href="@{../css/laundry.css}" />
+    <title>Прачечная</title>
+  </head>
+  <body>
+  <header class="header">
+    <a href="http://localhost:8080/dormitory/main" class="header-link">Главная</a>
+    <a href="http://localhost:8080/dormitory/laundry" class="header-link header-link__active">Прачечная</a>
+    <a href="http://localhost:8080/dormitory/applications" class="header-link">Заявки</a>
+    <a href="http://localhost:8080/dormitory/calculator" class="header-link">Калькулятор</a>
+    <div class="header_profile">
+      <h4 class="header-link" th:text="${user}">Маслов Г.О.</h4>
+      <a href="http://localhost:8080/auth/logout">
+        <img th:src="@{../icons/Exit Profile.svg}" />
+      </a>
+    </div>
+  </header>
+    <main>
+      <div class="main-content">
+        <div class="main-content__info">
+          <div class="main-content__info__machine_column">
+            <div class="main-content__info__machine_column__icon">
+              <img th:src="@{../icons/Machine1.svg}"/>
+            </div>
+            <button data="1"
+              class="main-content__info_machine_column_button">
+              6:00
+            </button>
+            <button data="1"
+              class="main-content__info_machine_column_button">
+              8:00
+            </button>
+            <button data="1"
+              class="main-content__info_machine_column_button">
+              10:00
+            </button>
+            <button data="1"
+              class="main-content__info_machine_column_button">
+              12:00
+            </button>
+            <button data="1" class="main-content__info_machine_column_button">
+              14:00
+            </button>
+            <button data="1"
+              class="main-content__info_machine_column_button">
+              16:00
+            </button>
+            <button data="1" class="main-content__info_machine_column_button">
+              18:00
+            </button>
+            <button data="1" class="main-content__info_machine_column_button">
+              20:00
+            </button>
+            <button data="1" class="main-content__info_machine_column_button">
+              22:00
+            </button>
+          </div>
+          <div class="main-content__info__machine_column">
+            <div class="main-content__info__machine_column__icon">
+              <img th:src="@{../icons/Machine2.svg}"/>
+            </div>
+            <button data="2"
+              class="main-content__info_machine_column_button">
+              6:00
+            </button>
+            <button data="2"
+              class="main-content__info_machine_column_button">
+              8:00
+            </button>
+            <button data="2"
+              class="main-content__info_machine_column_button">
+              10:00
+            </button>
+            <button data="2"
+              class="main-content__info_machine_column_button">
+              12:00
+            </button>
+            <button data="2"
+              class="main-content__info_machine_column_button">
+              14:00
+            </button>
+            <button data="2"
+              class="main-content__info_machine_column_button">
+              16:00
+            </button>
+            <button data="2" class="main-content__info_machine_column_button">
+              18:00
+            </button>
+            <button data="2" class="main-content__info_machine_column_button">
+              20:00
+            </button>
+            <button data="2" class="main-content__info_machine_column_button">
+              22:00
+            </button>
+          </div>
+          <div class="main-content__info__machine_column">
+            <div class="main-content__info__machine_column__icon">
+              <img th:src="@{../icons/Machine3.svg}"/>
+            </div>
+            <button data="3"
+              class="main-content__info_machine_column_button">
+              6:00
+            </button>
+            <button data="3"
+              class="main-content__info_machine_column_button">
+              8:00
+            </button>
+            <button data="3"
+              class="main-content__info_machine_column_button">
+              10:00
+            </button>
+            <button data="3"
+              class="main-content__info_machine_column_button">
+              12:00
+            </button>
+            <button data="3"
+              class="main-content__info_machine_column_button">
+              14:00
+            </button>
+            <button data="3"
+              class="main-content__info_machine_column_button">
+              16:00
+            </button>
+            <button data="3"
+              class="main-content__info_machine_column_button">
+              18:00
+            </button>
+            <button data="3" class="main-content__info_machine_column_button">
+              20:00
+            </button>
+            <button data="3" class="main-content__info_machine_column_button">
+              22:00
+            </button>
+          </div>
+          <div class="main-content__info__machine_column">
+            <div class="main-content__info__machine_column__icon">
+              <img th:src="@{../icons/Machine4.svg}"/>
+            </div>
+            <button data="4"
+              class="main-content__info_machine_column_button">
+              6:00
+            </button>
+            <button data="4"
+              class="main-content__info_machine_column_button">
+              8:00
+            </button>
+            <button data="4"
+              class="main-content__info_machine_column_button">
+              10:00
+            </button>
+            <button data="4" class="main-content__info_machine_column_button">
+              12:00
+            </button>
+            <button data="4"
+              class="main-content__info_machine_column_button">
+              14:00
+            </button>
+            <button data="4"
+              class="main-content__info_machine_column_button">
+              16:00
+            </button>
+            <button data="4" class="main-content__info_machine_column_button">
+              18:00
+            </button>
+            <button data="4"
+              class="main-content__info_machine_column_button">
+              20:00
+            </button>
+            <button data="4" class="main-content__info_machine_column_button">
+              22:00
+            </button>
+          </div>
+        </div>
+        <div class="main-content__separator"></div>
+        <div class="main-content__sidebar">
+          <h2>Ваши записи</h2>
+          <h3 class="main-content__sidebar__infoNone" th:if="${#lists.isEmpty(laundries)}">Записи отсутствуют</h3>
+            <div class="main-content__sidebar__info" th:each="laundry : ${laundries}">
+            <p th:text="'Стиральная машина - ' + ${laundry.idWashingMachine}"></p>
+            <p th:text="${laundry.time}">14:00</p>
+            <img th:src="@{../icons/CrossSmall.svg}" th:data="${laundry.id}" onclick="deleteLaundry(this)"/>
+          </div>
+          <button class="main-content__sidebar__button" onclick="writeLaundry(this)">Записаться</button>
+        </div>
+      </div>
+    </main>
+    <script th:src="@{../js/selectMachine.js}"></script>
+  </body>
+</html>
